@@ -3,12 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- stylesheet -->
     <link href="./src/css/output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-5xl font-bold text-center capitalize text-blue-600">
-      Hello, <br />
-      Mind Motion studio!
-    </h1>
+    <header class="fixed top-2 left-0 w-full z-10">
+      <div class="container mx-auto px-16">
+        <nav class="rounded-full bg-slate-100 w-full mx-auto">
+          <ul
+            class="flex flex-row justify-evenly items-center text-lg font-semibold capitalize"
+          >
+            <li>
+              <a href="#"
+                ><img
+                  class="h-[60%] w-[75%]"
+                  src="./src/assets/img/logo.png"
+                  alt=""
+              /></a>
+            </li>
+            <li><a href="#">service</a></li>
+            <li><a href="#">our works</a></li>
+            <li><a href="#">price</a></li>
+            <li><a href="#">about us</a></li>
+            <li>
+              <a href="#" class="bg-red-600 text-white px-4 py-3 rounded-full"
+                >book to call</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- hero section -->
+      <div class="bg-black min-h-screen flex items-end">
+        <div class="container mx-auto px-8 pb-16">
+          <div class="grid grid-cols-2 text-white gap-8">
+            <!-- content -->
+            <div class="capitalize">
+              <p class="font-semibold text-lg">motion mind studio</p>
+              <h1 class="font-extrabold mb-5 text-8xl">
+                sass video specialist
+                <span
+                  ><i class="fa-solid text-6xl text-red-700 fa-play"></i
+                ></span>
+              </h1>
+              <div class="flex flex-row justify-between items-center">
+                <p class="text-sm font-normal">
+                  This is the content of another section that you can scroll to
+                </p>
+                <a
+                  class="bg-red-700 text-white font-medium text-lg rounded-full px-8 py-2"
+                  href="#"
+                  >See price</a
+                >
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Another section -->
+      <section class="py-16">
+        <div class="container mx-auto px-8">
+          <h2 class="text-3xl font-bold">Another Section</h2>
+          <p>This is the content of another section that you can scroll to.</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
