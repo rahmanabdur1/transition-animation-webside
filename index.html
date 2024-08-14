@@ -1,161 +1,261 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
 
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- fontawesome cdn -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- stylesheet -->
-    <link href="./src/css/output.css" rel="stylesheet" />
-  </head>
-  <body>
-    <header class="fixed top-2 left-0 w-full z-10">
-      <div class="container mx-auto px-16">
-        <nav class="rounded-full bg-slate-100 w-full mx-auto">
-          <ul
-            class="flex flex-row justify-evenly items-center text-lg font-semibold capitalize"
-          >
-            <li>
-              <a href="#"
-                ><img
-                  class="h-[60%] w-[75%]"
-                  src="./src/assets/img/logo.png"
-                  alt=""
-              /></a>
-            </li>
-            <li><a href="#">service</a></li>
-            <li><a href="#">our works</a></li>
-            <li><a href="#">price</a></li>
-            <li><a href="#">about us</a></li>
-            <li>
-              <a href="#" class="bg-red-600 text-white px-4 py-3 rounded-full"
-                >book to call</a
-              >
-            </li>
-          </ul>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="./src/css/output.css" rel="stylesheet" />
+  <style>
+    /* Existing CSS code with animations */
+    @keyframes zoom-in {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .animated-button {
+      animation: zoom-in 0.5s ease-in-out 1s forwards;
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    @keyframes translate-animation {
+      0% {
+        transform: translateX(20px);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes translate-animation-2 {
+      0% {
+        transform: translateX(25px);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes translate-animation-3 {
+      0% {
+        transform: translateX(30px);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-up {
+      0% {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: translate-animation 1s ease-out forwards;
+    }
+
+    .fade-in:nth-child(2) {
+      animation: translate-animation-2 1s ease-out forwards;
+      animation-delay: 1s;
+    }
+
+    .fade-in:nth-child(3) {
+      animation: translate-animation-3 1s ease-out forwards;
+      animation-delay: 2s;
+    }
+
+    .fade-in:nth-child(4) {
+      animation: translate-animation 1s ease-out forwards;
+      animation-delay: 3s;
+    }
+
+    .fade-up {
+      opacity: 0;
+      animation: fade-up 0.5s ease-out forwards;
+    }
+
+    /* Adjust delays for staggered effects */
+    .fade-up:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .fade-up:nth-child(2) {
+      animation-delay: 01s;
+    }
+
+    @keyframes translateX-30 {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-120%);
+      }
+    }
+
+    .hero {
+      animation: translateX-30 1s ease-out forwards;
+      animation-delay: 3s;
+      opacity: 1;
+    }
+
+    .transition-height {
+      height: 100vh;
+      transition: height 0.5s ease-out;
+    }
+
+    .transition-height.shrink {
+      height: 80vh;
+      transition: height 0.5s ease-out;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="fixed top-2 left-0 w-full z-10">
+    <div class="container mx-auto px-16">
+      <nav class="rounded-full bg-slate-100 w-full mx-auto">
+        <ul class="flex flex-row justify-evenly items-center text-lg font-semibold capitalize">
+          <li><a href="#"><img class="h-[60%] w-[75%]" src="./src/assets/img/logo.png" alt="Logo" /></a></li>
+          <li><a href="#">service</a></li>
+          <li><a href="#">our works</a></li>
+          <li><a href="#">price</a></li>
+          <li><a href="#">about us</a></li>
+          <li><a href="#" class="bg-red-600 text-white px-4 py-3 rounded-full">book to call</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero section -->
+    <div id="hero-section" class="bg-black min-h-screen flex items-end">
+      <div class="container mx-auto px-8 pb-16">
+        <div class="grid grid-cols-2 text-white gap-8">
+          <div class="capitalize">
+            <p class="hero font-semibold text-lg">motion mind studio</p>
+            <h1 class="hero font-extrabold mb-5 text-8xl">
+              sass video specialist
+              <span><i class="fa-solid text-6xl text-red-700 fa-play"></i></span>
+            </h1>
+            <div class="flex flex-row justify-between items-center">
+              <p class="text-sm font-normal hero">This is the content of another section that you can scroll to</p>
+              <a id="animated-button" class="animated-button bg-red-700 text-white font-medium text-lg rounded-full px-8 py-2" href="#">See
+                price</a>
+            </div>
+          </div>
+          <div></div>
+        </div>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <!-- hero section -->
-      <div class="bg-black min-h-screen flex items-end">
-        <div class="container mx-auto px-8 pb-16">
-          <div class="grid grid-cols-2 text-white gap-8">
-            <!-- content -->
-            <div class="capitalize">
-              <p class="font-semibold text-lg">motion mind studio</p>
-              <h1 class="font-extrabold mb-5 text-8xl">
-                sass video specialist
-                <span
-                  ><i class="fa-solid text-6xl text-red-700 fa-play"></i
-                ></span>
-              </h1>
-              <div class="flex flex-row justify-between items-center">
-                <p class="text-sm font-normal">
-                  This is the content of another section that you can scroll to
-                </p>
-                <a
-                  class="bg-red-700 text-white font-medium text-lg rounded-full px-8 py-2"
-                  href="#"
-                  >See price</a
-                >
+    <!-- feature section and showcase -->
+    <div id="feature-section" class="bg-black h-screen text-white hidden">
+      <div class="container mx-auto bg-[#333] p-4">
+        <div class="grid grid-cols-12 transition-height" id="transition-div">
+          <div class="col-span-9 bg-black rounded-xl m-3.5">
+            <div class="h-full grid grid-cols-3 p-5 items-end">
+              <div class="fade-up">
+                <h3 class="capitalize text-xl font-medium">more customer with <br />sass video</h3>
+              </div>
+              <div>
+                <a class="bg-red-700 text-white font-medium text-sm rounded-full px-8 py-1.5" href="#">See price</a>
+                <a class="bg-[#333] text-white font-medium text-sm rounded-full px-8 py-1.5 fade-up" href="#">Book a
+                  call</a>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <div class="col-span-3 bg-black rounded-xl mt-3.5 mb-3.5 mr-3.5 h-[95.5%] overflow-hidden">
+            <div class="flex flex-col h-full">
+              <div class="bg-[#333] mx-5 my-3 rounded-xl" style="flex-grow: 3"></div>
+              <div class="flex-grow bg-[#333] mx-5 my-2 rounded-xl h-8 fade-in">
+                <div class="flex flex-row h-full items-center justify-around overflow-hidden">
+                  <span class="font-semibold text-center capitalize">sell solution</span>
+                  <span class="bg-black rounded-xl p-[35%]"><i class="fa-solid text-5xl fa-desktop"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow bg-[#333] mx-5 my-2 rounded-xl h-8 fade-in">
+                <div class="flex flex-row h-full items-center justify-around overflow-hidden">
+                  <span class="font-semibold text-center capitalize">simply software</span>
+                  <span class="bg-black rounded-xl p-[35%]"><i class="fa-solid text-5xl fa-microchip"></i></span>
+                </div>
+              </div>
+              <div class="flex-grow bg-[#333] mx-5 my-2 mb-4 rounded-xl h-8 fade-in">
+                <div class="flex flex-row h-full items-center justify-around overflow-hidden">
+                  <span class="font-semibold text-center capitalize">showcase features</span>
+                  <span class="bg-black rounded-xl p-[35%]"><i class="fa-solid text-5xl fa-user-secret"></i></span>
+                </div>
               </div>
             </div>
-            <div></div>
           </div>
         </div>
       </div>
+    </div>
+  </main>
 
-      <!-- feature section and showcase -->
-      <div class="bg-black text-white">
-        <div class="container mx-auto p-4">
-          <div class="grid grid-cols-12 bg-[#333] h-screen">
-            <div class="col-span-9 bg-black rounded-xl m-3.5">
-              <div class="h-full grid grid-cols-3 p-5 items-end">
-                <div class="">
-                  <h3 class="capitalize text-xl font-medium">
-                    more customer with <br />
-                    sass video
-                  </h3>
-                </div>
-                <div class="">
-                  <a
-                    class="bg-red-700 text-white font-medium text-sm rounded-full px-8 py-1.5"
-                    href="#"
-                    >See price</a
-                  >
-                  <a
-                    class="bg-[#333] text-white font-medium text-sm rounded-full px-8 py-1.5"
-                    href="#"
-                    >See price</a
-                  >
-                </div>
-                <div></div>
-              </div>
-            </div>
-            <div
-              class="col-span-3 bg-black rounded-xl mt-3.5 mb-3.5 mr-3.5 h-[95.5%] overflow-hidden"
-            >
-              <div class="flex flex-col h-full">
-                <div
-                  class="bg-[#333] mx-5 my-3 rounded-xl"
-                  style="flex-grow: 3"
-                ></div>
-                <div class="flex-grow bg-[#333] mx-5 my-2 rounded-xl h-8">
-                  <div
-                    class="flex flex-row h-full items-center justify-around overflow-hidden"
-                  >
-                    <span class="font-semibold text-center capitalize"
-                      >sell solution</span
-                    ><span class="bg-black rounded-xl p-4"
-                      ><i class="fa-solid text-5xl fa-desktop"></i
-                    ></span>
-                  </div>
-                </div>
-                <div class="flex-grow bg-[#333] mx-5 my-2 rounded-xl h-8">
-                  <div
-                    class="flex flex-row h-full items-center justify-around overflow-hidden"
-                  >
-                    <span class="font-semibold text-center capitalize"
-                      >simply software</span
-                    ><span class="bg-black rounded-xl p-4"
-                      ><i class="fa-solid text-5xl fa-microchip"></i
-                    ></span>
-                  </div>
-                </div>
-                <div class="flex-grow bg-[#333] mx-5 my-2 mb-4 rounded-xl h-8">
-                  <div
-                    class="flex flex-row h-full items-center justify-around overflow-hidden"
-                  >
-                    <span class="font-semibold text-center capitalize"
-                      >showcase features</span
-                    ><span class="bg-black rounded-xl p-4"
-                      ><i class="fa-solid text-5xl fa-user-secret"></i
-                    ></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <script>
+    // Define a function to hide the animated button and transition to the feature section
+    function onHeroAnimationEnd() {
+      // Hide the animated button
+      document.getElementById('animated-button').style.display = 'none';
+      
+      // Transition to the feature section
+      document.getElementById('hero-section').style.display = 'none';
+      document.getElementById('feature-section').style.display = 'block';
+      document.getElementById('transition-div').classList.add('shrink');
+    }
 
-          <!-- another section -->
-        </div>
-      </div>
-    </main>
-  </body>
+    // Add an event listener to detect when the hero animation finishes
+    document.querySelector('.hero').addEventListener('animationend', function () {
+      setTimeout(onHeroAnimationEnd, 1000); // Wait 1 second before transitioning to the feature section
+    });
+  </script>
+</body>
+
 </html>
