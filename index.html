@@ -6,18 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <link href="./src/css/output.css" rel="stylesheet" />
   <style>
-    /* Existing CSS code with animations */
     @keyframes zoom-in {
       0% {
         transform: scale(0);
         opacity: 0;
       }
-
       100% {
         transform: scale(1);
         opacity: 1;
@@ -35,11 +32,6 @@
         transform: translateX(20px);
         opacity: 0;
       }
-
-      50% {
-        opacity: 0.5;
-      }
-
       100% {
         transform: translateX(0);
         opacity: 1;
@@ -48,14 +40,9 @@
 
     @keyframes translate-animation-2 {
       0% {
-        transform: translateX(25px);
+        transform: translateX(22px);
         opacity: 0;
       }
-
-      50% {
-        opacity: 0.5;
-      }
-
       100% {
         transform: translateX(0);
         opacity: 1;
@@ -64,14 +51,9 @@
 
     @keyframes translate-animation-3 {
       0% {
-        transform: translateX(30px);
+        transform: translateX(26px);
         opacity: 0;
       }
-
-      50% {
-        opacity: 0.5;
-      }
-
       100% {
         transform: translateX(0);
         opacity: 1;
@@ -83,63 +65,60 @@
         transform: translateY(30px);
         opacity: 0;
       }
-
-      50% {
-        opacity: 1;
-      }
-
       100% {
         transform: translateY(0);
         opacity: 1;
       }
     }
 
-    .fade-in {
+    .fade-in, .fade-up {
       opacity: 0;
-      animation: translate-animation 1s ease-out forwards;
+      animation-play-state: paused;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .fade-in {
+      animation-name: translate-animation;
     }
 
     .fade-in:nth-child(2) {
-      animation: translate-animation-2 1s ease-out forwards;
-      animation-delay: 1s;
+      animation-name: translate-animation-2;
+      animation-delay: 0.5s;
     }
 
     .fade-in:nth-child(3) {
-      animation: translate-animation-3 1s ease-out forwards;
-      animation-delay: 2s;
+      animation-name: translate-animation-3;
+      animation-delay: 1.2s;
     }
 
     .fade-in:nth-child(4) {
-      animation: translate-animation 1s ease-out forwards;
-      animation-delay: 3s;
+      animation-delay: 1.5s;
     }
 
     .fade-up {
-      opacity: 0;
-      animation: fade-up 0.5s ease-out forwards;
+      animation-name: fade-up;
     }
 
-    /* Adjust delays for staggered effects */
     .fade-up:nth-child(1) {
       animation-delay: 0s;
     }
 
     .fade-up:nth-child(2) {
-      animation-delay: 01s;
+      animation-delay: 0s;
     }
 
     @keyframes translateX-30 {
       0% {
         transform: translateX(0);
       }
-
       100% {
         transform: translateX(-120%);
       }
     }
 
     .hero {
-      animation: translateX-30 1s ease-out forwards;
+      animation: translateX-30 0.7s ease-out forwards;
       animation-delay: 3s;
       opacity: 1;
     }
@@ -203,9 +182,9 @@
               <div class="fade-up">
                 <h3 class="capitalize text-xl font-medium">more customer with <br />sass video</h3>
               </div>
-              <div>
+              <div class="fade-up">
                 <a class="bg-red-700 text-white font-medium text-sm rounded-full px-8 py-1.5" href="#">See price</a>
-                <a class="bg-[#333] text-white font-medium text-sm rounded-full px-8 py-1.5 fade-up" href="#">Book a
+                <a class="  bg-[#333] text-white font-medium text-sm rounded-full px-8 py-1.5" href="#">Book a
                   call</a>
               </div>
               <div></div>
@@ -240,20 +219,25 @@
   </main>
 
   <script>
-    // Define a function to hide the animated button and transition to the feature section
     function onHeroAnimationEnd() {
       // Hide the animated button
       document.getElementById('animated-button').style.display = 'none';
-      
+
       // Transition to the feature section
       document.getElementById('hero-section').style.display = 'none';
       document.getElementById('feature-section').style.display = 'block';
+
+      // Start the height transition and animations
       document.getElementById('transition-div').classList.add('shrink');
+
+      document.querySelectorAll('.fade-in, .fade-up').forEach(element => {
+        element.style.animationPlayState = 'running';
+      });
     }
 
-    // Add an event listener to detect when the hero animation finishes
     document.querySelector('.hero').addEventListener('animationend', function () {
-      setTimeout(onHeroAnimationEnd, 1000); // Wait 1 second before transitioning to the feature section
+      // Ensure the animations start immediately after the hero animation ends
+      setTimeout(onHeroAnimationEnd, 0);
     });
   </script>
 </body>
